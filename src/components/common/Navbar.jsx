@@ -87,6 +87,23 @@ export function Navbar() {
               );
             })}
 
+            {/* Admin Dashboard Link */}
+            {(isSubAdmin || isSuperAdmin) && (
+              <NavLink
+                to="/admin"
+                className={({ isActive }) =>
+                  `flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-sm font-semibold transition-all ${
+                    isActive
+                      ? 'bg-amber-600/30 text-amber-200 border border-amber-500/50 shadow-sm'
+                      : 'text-amber-400 hover:text-amber-200 hover:bg-amber-950/40 border border-amber-500/20'
+                  }`
+                }
+              >
+                <LayoutDashboard className="w-4 h-4 text-amber-400" />
+                <span>Admin Dashboard</span>
+              </NavLink>
+            )}
+
             {/* Super Admin Nav Link (if Super Admin) */}
             {isSuperAdmin && (
               <NavLink
@@ -155,6 +172,17 @@ export function Navbar() {
                         <User className="w-4 h-4 text-indigo-400" />
                         <span>My Profile & Registered Events</span>
                       </Link>
+
+                      {(isSubAdmin || isSuperAdmin) && (
+                        <Link
+                          to="/admin"
+                          onClick={() => setIsUserMenuOpen(false)}
+                          className="flex items-center gap-2 px-3 py-2 rounded-xl text-sm text-amber-300 hover:bg-amber-950/40 transition-colors"
+                        >
+                          <LayoutDashboard className="w-4 h-4 text-amber-400" />
+                          <span>Admin Dashboard</span>
+                        </Link>
+                      )}
 
                       {isSuperAdmin && (
                         <Link
@@ -233,6 +261,17 @@ export function Navbar() {
               </NavLink>
             );
           })}
+
+          {(isSubAdmin || isSuperAdmin) && (
+            <NavLink
+              to="/admin"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="flex items-center gap-3 px-4 py-3 rounded-xl text-base font-semibold text-amber-300 bg-amber-950/30 border border-amber-500/30"
+            >
+              <LayoutDashboard className="w-5 h-5 text-amber-400" />
+              <span>Admin Dashboard</span>
+            </NavLink>
+          )}
 
           {isSuperAdmin && (
             <NavLink

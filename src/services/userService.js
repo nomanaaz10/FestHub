@@ -12,6 +12,17 @@ import { db } from "../firebase/config";
 const USERS_COLLECTION = "users";
 const REGISTRATIONS_COLLECTION = "registrations";
 
+export async function getAllRegistrations() {
+  try {
+    const q = query(collection(db, REGISTRATIONS_COLLECTION));
+    const snapshot = await getDocs(q);
+    return snapshot.docs.map(d => ({ id: d.id, ...d.data() }));
+  } catch (error) {
+    console.warn("Firestore getAllRegistrations error:", error);
+    return [];
+  }
+}
+
 export async function getAllUsers() {
   try {
     const q = query(collection(db, USERS_COLLECTION));

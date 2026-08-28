@@ -19,6 +19,7 @@ import { Profile } from './pages/Profile';
 import { Login } from './pages/Login';
 import { Signup } from './pages/Signup';
 import { SuperAdmin } from './pages/SuperAdmin';
+import { AdminDashboard } from './pages/AdminDashboard';
 
 function App() {
   return (
@@ -48,6 +49,16 @@ function App() {
                     <ProtectedRoute>
                       <Profile />
                     </ProtectedRoute>
+                  }
+                />
+
+                {/* Admin Dashboard */}
+                <Route
+                  path="/admin"
+                  element={
+                    <AdminRoute>
+                      <AdminDashboard />
+                    </AdminRoute>
                   }
                 />
 
