@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <linearGradient id="festGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1" />
+      <stop offset="50%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#f43f5e" />
+    </linearGradient>
+  </defs>
+  <rect width="32" height="32" rx="8" fill="url(#festGrad)" />
+  <path d="M16 6L18 12L24 14L18 16L16 22L14 16L8 14L14 12Z" fill="#ffffff" />
+  <circle cx="22" cy="8" r="1.5" fill="#fef08a" />
+  <circle cx="10" cy="22" r="1.2" fill="#fef08a" />
+</svg>
